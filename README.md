@@ -15,7 +15,7 @@ Prerequisite:
   </ol>
 
 Preinstalled Libraries : 
-<ol>li> Socket</li> <li> Re</li> <li> Sys</li></ol>
+<ol><li> Socket</li> <li> Re</li> <li> Sys</li></ol>
 
  
  Direction To use Code:
