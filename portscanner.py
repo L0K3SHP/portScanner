@@ -50,13 +50,13 @@ def opt2(target):
      
 def main():
     x = ''
-    target = input("Enter Target Hostname or IP Address:\t")
-    x = re.findall("[0-9]",target)
-    if x:
-        pass
-    else:
-        target = socket.gethostbyname(target)
-    try:
+    try: 
+        target = input("Enter Target Hostname or IP Address:\t")
+        x = re.findall("[0-9]",target)
+        if x:
+            pass
+        else:
+            target = socket.gethostbyname(target)
         opt = int(input("Which Opterationn want to perform:\n1:Comman Ports\n2:All Ports\nEnter the choice:\t"))
         if (opt == 1):
             opt1(target)
@@ -67,6 +67,12 @@ def main():
             sys.exit()
     except ValueError:
         print("Enter the correct Operation not any string!!!")
+        sys.exit()
+     except socket.gaierror: 
+        print("\n Hostname Could Not Be Resolved !!!!") 
+        sys.exit()
+    except socket.error: 
+        print("\ Server not responding !!!!") 
         sys.exit()
         
 if __name__ == '__main__' :
